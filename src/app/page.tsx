@@ -21,7 +21,7 @@ export default function Home() {
           <HeroSection1 />
         </section>
         <section className="h-screen snap-start">
-          <TouchPoint />
+          {/* <TouchPoint /> */}
         </section>
         <section className="h-screen snap-start">
           {/* <SubscriptionServiceComponent /> */}
