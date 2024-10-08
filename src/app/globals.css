@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  user-select: none;
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.landing-bg {
+  background-color: rgb(237, 225, 209, 80%);
+}
+
+.scroll-none::-webkit-scrollbar-button {
+  display: none;
+}
+.scroll-none::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+
+/* When the element starts entering */
+.slide-left-enter {
+  transform: translateX(100%); /* Starts off-screen to the right */
+  opacity: 0; /* Initially hidden */
+  position: absolute; /* Ensures it overlaps without affecting layout */
+}
+
+/* While the element is actively entering */
+.slide-left-enter-active {
+  transform: translateX(0); /* Moves to its correct position */
+  opacity: 1; /* Fades in */
+  transition: transform 300ms ease, opacity 300ms ease;
+  position: relative; /* After entering, it takes its place in the layout */
+}
+
+/* When the element starts exiting */
+.slide-left-exit {
+  transform: translateX(0); /* Starts from its current position */
+  opacity: 1; /* Fully visible */
+  position: relative;
+}
+
+/* While the element is actively exiting */
+.slide-left-exit-active {
+  transform: translateX(-100%); /* Moves off-screen to the left */
+  opacity: 0; /* Fades out */
+  transition: transform 300ms ease, opacity 300ms ease;
+  position: absolute; /* Ensures it overlaps during the exit */
+}
+
+/* Right to left transitions */
+
+/* When the element starts entering from the left */
+.slide-right-enter {
+  transform: translateX(-100%); /* Starts off-screen to the left */
+  opacity: 0; /* Initially hidden */
+  position: absolute;
+}
+
+/* While the element is actively entering */
+.slide-right-enter-active {
+  transform: translateX(0); /* Moves to its correct position */
+  opacity: 1; /* Fades in */
+  transition: transform 300ms ease, opacity 300ms ease;
+  position: relative;
+}
+
+/* When the element starts exiting */
+.slide-right-exit {
+  transform: translateX(0);
+  opacity: 1;
+  position: relative;
+}
+
+/* While the element is actively exiting */
+.slide-right-exit-active {
+  transform: translateX(100%); /* Moves off-screen to the right */
+  opacity: 0; /* Fades out */
+  transition: transform 300ms ease;
+  position: absolute; /* Ensures it overlaps during the exit */
+}
+
+
+
+
+
+/* Add this to your global CSS file */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* Set width of the scrollbar */
+  height: -10px; /* Set height of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6A704C; /* Thumb color */
+  border-radius: 10px; /* Rounded corners for thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #e1e1e193; /* Track color */
+}
+
+
+
+
